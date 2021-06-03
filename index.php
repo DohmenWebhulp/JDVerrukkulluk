@@ -52,6 +52,7 @@
 
             $schap->addToList($recept_id, $gebruiker);
             $data1 = $schap->ophalenBoodschappen($gebruiker); //Andere user_id dan degene die het recept gemaakt heeft
+            var_dump($recept_id);
             $data2 = $ingred->ophalenIngredient($recept_id);
             for($i = 0; $i < count($data1); $i++){
                 $data[$i] = array_merge($data1[$i], $data2[$i]);
