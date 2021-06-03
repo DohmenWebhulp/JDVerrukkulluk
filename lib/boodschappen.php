@@ -58,6 +58,11 @@ class Boodschappen{
 
         $verp = $artikel['Verpakking'];
         $art_id = $artikel['artikel_id'];
+        $foto = $artikel['foto'];
+        $naam = $artikel['Naam'];
+        $prijs = $artikel['Prijs'];
+        $omschr = $artikel['Omschrijving'];
+
         $aantal = 0;
 
         if($hoev % $verp == 0){
@@ -66,8 +71,8 @@ class Boodschappen{
             $aantal += intdiv($hoev, $verp) + 1;
         }
         
-        $sql = "INSERT INTO boodschappen (artikel_id, user_id, aantal)
-        VALUES ($art_id, $user_id, $aantal)";
+        $sql = "INSERT INTO boodschappen (artikel_id, user_id, aantal, foto, prijs, naam, omschrijving)
+        VALUES ($art_id, $user_id, $aantal, $foto, $naam, $prijs, $omschr)";
         $result = mysqli_query($this->connection, $sql);
     }
 

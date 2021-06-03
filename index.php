@@ -51,12 +51,7 @@
         case 'boodschappenlijst':
 
             $schap->addToList($recept_id, $gebruiker);
-            $data1 = $schap->ophalenBoodschappen($gebruiker); //Andere user_id dan degene die het recept gemaakt heeft
-            var_dump($recept_id);
-            $data2 = $ingred->ophalenIngredient($recept_id);
-            for($i = 0; $i < count($data1); $i++){
-                $data[$i] = array_merge($data1[$i], $data2[$i]);
-            }
+            $data = $schap->ophalenBoodschappen($gebruiker); //Andere user_id dan degene die het recept gemaakt heeft
             $template = 'boodschappenlijst.html.twig';
             $title = 'boodschappenlijst';
             //echo "<pre>";
@@ -87,49 +82,5 @@
 
     $template = $twig->load($template);
     echo $template->render(["title" => $title, "data" => $data]);
-
-
-
-    /*
-    if(empty($_GET['id'])){
-
-        //Homepage
-
-        $data = $rece->ophalenRecept();
-        var_dump($data);
-
-    }else{
-
-        //Detailpagina
-
-        $data = $rece->ophalenRecept($_GET['id']);
-        $gerecht = $data[0];
-        echo "<pre>";
-        var_dump($data);
-        if($_GET){
-            $schap->addToList($gerecht['id'], $data[0]['user_id']);
-            $grocs = $schap->ophalenBoodschappen($data['user_id']); //Andere user_id dan degene die het recept gemaakt heeft
-            var_dump($grocs);
-        }
-        if(clickOnHeart($u)){
-            if(heartIsFull()){
-                $ginfo->addFavoriet($i, $u, $datum); 
-            }else{
-                $ginfo->removeFavoriet($i, $u);
-            }
-        }
-    }
-
-    echo "GET variables usable";
-
-    //$schap = new Boodschappen($db->getConnection());
-    //$dataa = $schap->addToList(1, 1);
-
-    //$dataa = $schap->ophalenBoodschappen(1);
-
-    $user = new User($db->getConnection());
-    $dataaa = $user->ophalenUser(1);
-    echo "<pre>";
-    var_dump($data);*/
 
 ?>
