@@ -23,7 +23,7 @@
             <ul>
                 {% for ingr in record.Ingrediënten %}
                     <li>
-                        <span {% if ingr.artikel_id < 3 %}style='color: #F00'{% endif %}>{{  ingr.Naam }}</span>
+                        <span {% if ingr.artikel_id < 3 %}style='color: #F00'{% endif %}>{{  ingr.naam }}</span>
 
                         {# if #}
                         {%  if ingr.artikel_id == 3 %}

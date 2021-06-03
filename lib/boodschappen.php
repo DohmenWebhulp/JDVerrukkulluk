@@ -59,9 +59,9 @@ class Boodschappen{
         $verp = $artikel['Verpakking'];
         $art_id = $artikel['artikel_id'];
         $foto = $artikel['foto'];
-        $naam = $artikel['Naam'];
-        $prijs = $artikel['Prijs'];
-        $omschr = $artikel['Omschrijving'];
+        $naam = $artikel['naam'];
+        $prijs = $artikel['prijs'];
+        $omschr = $artikel['omschrijving'];
 
         $aantal = 0;
 
