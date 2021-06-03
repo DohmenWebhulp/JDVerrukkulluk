@@ -1,0 +1,126 @@
+.heart { 
+    position: relative; 
+    width: 100px; 
+    height: 90px; 
+} 
+
+.heart:before, .heart:after { 
+    position: absolute; 
+    content: ""; 
+    left: 40px; 
+    top: 0; 
+    width: 40px; 
+    height: 60px; 
+    background: red; 
+    border-radius: 50px 50px 0 0; 
+    transform: rotate(-45deg); 
+    transform-origin: 0 100%; 
+} 
+
+.heart:after { 
+    left: 0; 
+    transform: rotate(45deg); 
+    transform-origin :100% 100%; 
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 174, 0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-content {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: xx-large;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: rgb(255, 174, 0);
+    border-radius: 50%;
+}
+
+.content {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.teksten {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    background-color: deepskyblue;
+    color: blue;
+    overflow: auto;
+}
+
+.teksten-ingr {
+    background-color: red;
+}
+
+.teksten-bereid {
+    display: flex;
+    align-items: center;
+    color: indigo;
+}
+
+.teksten-opm {
+    display: flex;
+    align-items: center;
+    color: lawngreen;
+}
+
+.receptinfo {
+    border: 10px solid red;
+    padding: 0px;
+    height: 500px;
+    width: 100%;
+}
+
+.boods {
+    padding: 20px;
+    height: 20%;
+}
+
+.bckgrnd {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.fotos {
+    background-position: center center;
+    background-size: 100% 50%;
+    background-repeat: no-repeat; 
+}
+
+.flotl {
+    float: left;
+}
+
+.flotr {
+    float: right;
+    margin-right: 10px;
+}
+
+.butn {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.tekstbox {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    background-color: yellow;
+    margin-top: 10px;
+    clear: both;
+}

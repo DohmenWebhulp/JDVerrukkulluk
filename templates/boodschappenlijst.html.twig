@@ -1,0 +1,26 @@
+{# Opnemen van de "Main" file #}
+{% extends "main.html.twig" %}
+
+{% block content %}
+    <a href="index.php?action=homepage">HOMEPAGE</a>
+    <section class="receptinfo boods">
+        <h1>Boodschappen</h1>
+        {% for bood in data %}
+            <div class="row">
+                <div class="col-md-6">
+                    Artikel1
+                </div>
+                <div class="col-md-2">
+                    {{bood.aantal}}
+                </div>
+                <div class="col-md-2">
+                    Prijs
+                </div>
+                <div class="col-md-2">
+                    Icons
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}

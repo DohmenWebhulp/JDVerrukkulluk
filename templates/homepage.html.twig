@@ -1,0 +1,43 @@
+{# Opnemen van de "Main" file #}
+{% extends "main.html.twig" %}
+
+{# nu de block content op in de main pagina vullen #}
+{% block content %}
+    {# Dit is commentaar #}
+
+    {# Print #}
+    <h1>Heading #1</h1>
+    <h2>Heading #2</h2>
+    <h3>Heading #3 t/m 5</h3>
+
+    <h4>Dit is de template {{  title }}</h4>
+
+{# Loop #}
+    <ul>
+    {% for record in data %}
+        <li>
+            <img src="{{ record.foto }}" style="width: 100px; heigfht: 100px;">
+            
+            <a href="index.php?action=detailpage&id={{record.id}}"> {{ record.Naam }} </a>
+            {# sub-loop #}
+            <ul>
+                {% for ingr in record.Ingrediënten %}
+                    <li>
+                        <span {% if ingr.artikel_id < 3 %}style='color: #F00'{% endif %}>{{  ingr.Naam }}</span>
+
+                        {# if #}
+                        {%  if ingr.artikel_id == 3 %}
+                            <strong>Dit is artikel ID 3!</strong>
+                        {%  endif  %}
+                    </li>
+                {% endfor %}
+            </ul><hr>
+        </li>
+    {% endfor %}
+    <ul>
+     {# Dump #}
+       <pre>
+        {{ dump(data) }}
+       </pre>
+
+{% endblock %}

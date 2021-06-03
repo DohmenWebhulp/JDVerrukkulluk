@@ -1,0 +1,140 @@
+{# Opnemen van de "Main" file #}
+{% extends "main.html.twig" %}
+
+{% block content %}
+    <a href="index.php?action=homepage">HOMEPAGE</a>
+    <section><h1>Receptinformatie</h1>
+        <div class="receptinfo">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ data[0].foto }}" style="width: 100%; height: 100%">
+                </div>
+                <div class="col-md-8">
+                    <div class="flotl"><h2 style="background-color: blue">Heerlijke {{data[0].Naam}}!</h2></div>
+                    <div class="flotr" style="background-color: red"><h2>Beoordeel dit Recept</h2>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="tekstbox" style="height: 50px">
+                        <h3>Dit gerecht heeft maar liefst {{data[0].Totaal_Calorieën}} Calorieën en kost wel {{data[0].Totale_Prijs}} euro!</h3>
+                    </div>
+                    <div>
+                        <h5 class="flotl">Keuken : {{data[0].Type_Keuken.Omschrijving}}</h5> 
+                        <h5 class="flotr">Type : {{data[0].Type_Voedsel.Omschrijving}}</h5><br>
+                    </div>
+                    <div class="tekstbox">{{data[0].langeOmschrijving}}</div>
+
+                    <!--JavaScript redirect naar boodschappenlijst-->
+
+                    <div>
+                        <a href="index.php?action=boodschappenlijst&id={{data[0].id}}" type="button" class="btn btn-primary butn flotl">Op Lijst</a><br>
+
+                        <div class="flotr" style="background-color: yellow"> <h2>Voeg toe aan Favorieten</h2>
+                            <i class="far fa-heart fa-4x" style="color: red"></i>
+                            <!--if click on heart met JavaScript-->
+                            <i class="fas fa-heart fa-4x" style="color: red"></i><br>
+                        </div>
+                    </div>
+                    
+                    <!--ajax call met JavaScript-->
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12">
+            <div class="tabbable" id="tabs-508190">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingred" data-toggle="tab"><h1>Ingrediënten</h1></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#bered" data-toggle="tab"><h1>Bereidingswijze</h1></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#opmed" data-toggle="tab"><h1>Opmerkingen</h1></a>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="ingred">
+                        <p>
+                            <ul style="list-style-type: none; padding: 0; margin: 0">
+                                {% for ingr in data[0].Ingrediënten %}
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div class="circle-content">
+                                                    {{ingr.ID}}.
+                                                </div>       
+                                            </div>
+                                            <div class="col-md-11">
+                                                <div class="teksten teksten-ingr">
+                                                    <div style="display: block">
+                                                        <h5>{{ingr.Naam}}</h5>
+                                                        {{ingr.omschrijving}}
+                                                        <h6>Hoeveelheid : <div style="display: inline-block; font-family: Arial, Helvetica, sans-serif">{{ingr.Hoeveelheid}} gram</div> </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li><br>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="tab-pane active" id="bered">
+                        <p>
+                            <ul style="list-style-type: none; padding: 0; margin: 0">
+                                {% for bereid in data[0].Bereiding %}
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div class="circle-content">
+                                                    {{bereid.stap_of_aantal}}.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-11">
+                                                <div class="teksten teksten-bereid">
+                                                    {{bereid.omschrijving}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li><br>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="opmed">
+                        <p>
+                            <ul style="list-style-type: none; padding: 0; margin: 0">
+                                {% for opm in data[0].Opmerkingen %}
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div class="circle-content">
+                                                    {{opm.user_id}}.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-11">
+                                                <div class="teksten teksten-opm">
+                                                    <div style="display: block"> <h5>{{opm.Gebruikersnaam}}</h5>
+                                                    {{opm.omschrijving}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
