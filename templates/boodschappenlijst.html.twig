@@ -8,19 +8,34 @@
         {% for bood in data %}
             <div class="row">
                 <div class="col-md-6">
-                    Artikel12345663
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{bood.foto}}" style="width: 100px; height: 100px">
+                        </div>
+                        <div class="col-md-9">
+                            <h2 style="color: limegreen">{{bood.Naam}}</h2>
+                            {{bood.omschrijving}}
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-2">
                     {{bood.aantal}}
                 </div>
                 <div class="col-md-2">
-                    Prijs
+                    {{bood.aantal * bood.Prijs}}
                 </div>
                 <div class="col-md-2">
-                    Icons
+                    <i class="fas fa-check fa-2x" style="color: green"></i>
+                    <i class="fas fa-trash-alt fa-2x" style="color: red"></i>
                 </div>
             </div>
         {% endfor %}
+        <div class="tekstbox"></div>
+        <h2 class="flotl" style="margin-bottom: 50px; color: darkred">Totaal</h2>
+        <div class="flotr"><i class="fas fa-trash-alt fa-2x" style="color: red"></i></div>
+        <div class="flotr">
+            Totale Prijs
+        </div>
     </section>
 
 {% endblock %}
