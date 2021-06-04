@@ -134,13 +134,25 @@
     height: 100%;
 }
 
-.ontop::after{
-    content: "";
-    display: block;
-    width: 30%;
-    height: 30%;
+.block {
+    display: flex;
+    background-color: #FF0;   
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    height: 55%;
+    width: 100%;
 }
 
-.ontop{
-    position: relative;
+.block-content {
+    display: flex;
+    width: 30%;
+    height: 30%;
+    justify-content: left;
+    align-items: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #F0F;
+    background-color: rgba(0,0,255,0.3);
+    border-radius: 5%;
 }
