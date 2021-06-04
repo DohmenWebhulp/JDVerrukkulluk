@@ -31,10 +31,10 @@ class Boodschappen{
         foreach($data as $value){
             $schap = $this->controlArtikel($value['artikel_id'], $user_id);
             if($schap){
-                $this->editArtikel($value, $user_id, $value['Hoeveelheid'], $schap);
+                $this->editArtikel($value, $user_id, $schap);
                 //echo "Article edited in grocery list";
             }else{
-                $this->addArtikel($value, $user_id, $value['Hoeveelheid']);
+                $this->addArtikel($value, $user_id);
                 //echo "Article added to grocery list";
             }
         }
@@ -54,8 +54,9 @@ class Boodschappen{
         return(FALSE);
     }
 
-    private function addArtikel($artikel, $user_id, $hoev){
+    private function addArtikel($artikel, $user_id){
 
+        $hoev = $artikel['Hoeveelheid'];
         $verp = $artikel['Verpakking'];
         $art_id = $artikel['artikel_id'];
         $foto = $artikel['foto'];
@@ -72,12 +73,13 @@ class Boodschappen{
         }
         
         $sql = "INSERT INTO boodschappen (artikel_id, user_id, aantal, foto, prijs, naam, omschrijving)
-        VALUES ($art_id, $user_id, $aantal, $foto, $naam, $prijs, $omschr)";
+        VALUES ($art_id, $user_id, $aantal, '$foto', $prijs, '$naam', '$omschr')";
         $result = mysqli_query($this->connection, $sql);
     }
 
-    private function editArtikel($artikel, $user_id, $hoev, $schap){
+    private function editArtikel($artikel, $user_id, $schap){
 
+        $hoev = $artikel['Hoeveelheid'];
         $verp = $artikel['Verpakking'];
         $art_id = $artikel['artikel_id'];
         $aantal = $schap['aantal'];
