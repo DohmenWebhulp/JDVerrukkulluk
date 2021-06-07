@@ -21,12 +21,8 @@
     <script type="text/javascript" language="javascript" src="assets/bootstrap/js/bootstrap.js"></script>
     <style>
         .block {
-            background : url("screenshots/babi.jpg");
-            background-position: center center;
-            background-size: 100% 100%;
-            background-repeat: no-repeat; 
             display: flex;
-            background-color: #FF0;   
+            background-color: #FFF;  
             justify-content: left;
             align-items: baseline;
             padding: 10px;
@@ -35,14 +31,19 @@
         }
 
         .block-content {
-            display: flex;
-            width: 50%;
-            height: 30%;
-            justify-content: right;
-            align-items: baseline;
-            background-color: red;
-            opacity: 0.5;
-            border-radius: 5%;
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            border-radius: 0%;
+        }
+
+        .contactinfo{
+            height: 250px;
+            width: 100%;
+            padding: 40px;
+            margin-top: 20px;
+            background-color: orange;
+            color: white;
         }
     </style>
 </html>
@@ -79,14 +80,14 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
             <div class="block-content">
-                <img src="assets/img/logo-v2.png" style="width: 100%; height: 100%">
+                <img src="assets/img/logo-v2.png" style="width: 500px; height: 200px">
             </div>
         </div>
     {% else %}
         <div class="block">
-            <img src="{{data[0].foto}}" alt="{{data[0].Naam}}" width="100%" height="500">
+            <img src="{{data[0].foto}}" alt="{{data[0].Naam}}" width="100%" height="100%">
             <div class="block-content">
-                <img src="assets/img/logo-v2.png" style="width: 100%; height: 100%">
+                <img src="assets/img/logo-v2.png" style="width: 500px; height: 200px">
             </div>
         </div>
     {% endif %}
@@ -114,7 +115,23 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Contact</h1>
+            <div class="contactinfo">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="assets/img/verrukkulluk-pay-off.png" style="width: 100%; height: 70px">
+                    </div>
+                    <div class="col-md-11">      
+                        <h1>Contact</h1>
+                        Verrukkulluk.nl<br>
+                        Poststraat 2b<br>
+                        Sittard<br>
+                        info@verrukkulluk.nl
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
         </div>
     </div>
 

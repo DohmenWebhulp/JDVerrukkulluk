@@ -137,7 +137,7 @@ class Recept{
         $hoev = array_column($ingr, 'Hoeveelheid');
         $sum = 0;
         for($i = 0; $i<count($calo); $i++){
-            $sum = $sum + ($calo[$i]*$hoev[$i])/100;
+            $sum = $sum + ($calo[$i]*$hoev[$i])/1000;
         }
 
         return($sum);
@@ -150,7 +150,8 @@ class Recept{
         $ingr = $this->ophalenIngredient_r($recept_id);
         $price = array_column($ingr, 'Prijs');
         $sum = array_sum($price);
-
+        //echo "<pre>";
+        //var_dump($sum);
         return($sum);
     }
 

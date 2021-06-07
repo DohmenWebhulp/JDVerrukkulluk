@@ -82,16 +82,18 @@
     color: lawngreen;
 }
 
-.receptinfo {
-    border: 10px solid red;
-    padding: 0px;
-    height: 500px;
+.receptinfob {
+    border: 10px solid blue;
+    padding: 10px;
+    height: 93%;
     width: 100%;
 }
 
-.boods {
-    padding: 20px;
-    height: 100%;
+.receptinfor {
+    border: 10px solid blue;
+    padding: 0px;
+    height: 500px;
+    width: 100%;
 }
 
 .bckgrnd {
@@ -122,9 +124,8 @@
 
 .tekstbox {
     width: 100%;
-    height: 10%;
+    height: 2%;
     background-color: #FFF;
-    clear: both;
 }
 
 .white {
@@ -189,5 +190,13 @@
 .logo{
     display: flex;
     justify-content: center;
+    color: white;
+}
+
+.contactinfo{
+    height: 100px;
+    width: 100%;
+    padding: 40px;
+    background-color: orange;
     color: white;
 }

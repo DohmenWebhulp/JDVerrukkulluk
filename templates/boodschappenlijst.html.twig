@@ -3,10 +3,24 @@
 
 {% block content %}
     <a href="index.php?action=homepage">HOMEPAGE</a>
-    <section class="receptinfo boods">
-        <h1>Boodschappen</h1>
+    <section class="receptinfob">
+        <h1 style="text-align: center">Boodschappen</h1>
+        <div class="row">
+            <div class="col-md-1">
+                <h2>Foto</h2>
+            </div>
+            <div class="col-md-5" style="padding-left: 56px">
+                <h2>Titel en beschrijving</h2>
+            </div>
+            <div class="col-md-2">
+                <h2>Aantal</h2>
+            </div>
+            <div class="col-md-2">
+                <h2>Prijs</h2>
+            </div>
+        </div>
         {% for bood in data %}
-            <div class="row">
+            <div class="row" style="margin-top: 50px">
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-3">
