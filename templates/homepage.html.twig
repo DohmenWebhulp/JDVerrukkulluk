@@ -10,28 +10,44 @@
     <h4>Dit is de template {{  title }}</h4>
 
 {# Loop #}
-    <ul>
+    <div class="row">
     {% for record in data %}
-        <li>
-            <img src="{{ record.foto }}" style="width: 100px; heigfht: 100px;">
-            
-            <a href="index.php?action=detailpage&id={{record.id}}"> {{ record.Naam }} </a>
-            {# sub-loop #}
-            <ul>
-                {% for ingr in record.Ingrediënten %}
-                    <li>
-                        <span {% if ingr.artikel_id < 3 %}style='color: #F00'{% endif %}>{{  ingr.naam }}</span>
+        <div class="receptinfoh">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{record.foto}}" style="width: 100%; height: 100%">
+                </div>
+                <div class="col-md-12">
+                    <div class="flotl" style="padding-top: 20px">
+                        <i class="fas fa-user-friends"> 4</i>
+                        <i class="fas fa-euro-sign" style="margin-left: 5px"> {{record.Totale_Prijs}},- </i>
+                        <i class="fab fa-gripfire" style="margin-left: 5px"> {{record.Totaal_Calorieën}} </i>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="flotl"><h5>Heerlijke {{record.Naam}}!</h5></div>
+                    <div class="flotr">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div style="clear: both">{{record.korteOmschrijving}}</div>
 
-                        {# if #}
-                        {%  if ingr.artikel_id == 3 %}
-                            <strong>Dit is artikel ID 3!</strong>
-                        {%  endif  %}
-                    </li>
-                {% endfor %}
-            </ul><hr>
-        </li>
+                    <!--JavaScript redirect naar boodschappenlijst-->
+
+                    <a href="index.php?action=detailpage&id={{record.id}}" type="button" class="btn btn-primary butn flotl" style="margin-top: 30px">
+                        Smullen!
+                    </a>
+                    
+                    <!--ajax call met JavaScript-->
+
+
+                </div>
+            </div>
+        </div>
     {% endfor %}
-    <ul>
-     {# Dump #}
+    </div>
 
 {% endblock %}
