@@ -16,6 +16,7 @@ class Boodschappen{
 
         $sql = "select * from boodschappen where user_id = $user_id";
         $result = mysqli_query($this->connection, $sql);
+        $bdsp = [];
         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $bdsp[] = $row;
         }

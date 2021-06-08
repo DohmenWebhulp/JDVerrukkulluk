@@ -148,7 +148,7 @@ class Recept{
         //Price does not depend on hoeveelheid. You can't buy 1.5 bags.
 
         $ingr = $this->ophalenIngredient_r($recept_id);
-        $price = array_column($ingr, 'Prijs');
+        $price = array_column($ingr, 'prijs');
         $sum = array_sum($price);
         //echo "<pre>";
         //var_dump($sum);
