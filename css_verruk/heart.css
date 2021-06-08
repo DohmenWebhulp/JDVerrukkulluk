@@ -85,14 +85,14 @@
 .receptinfob {
     border: 10px solid blue;
     padding: 10px;
-    height: 93%;
+    height: 95%;
     width: 100%;
 }
 
 .receptinfor {
     border: 10px solid blue;
     padding: 0px;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
@@ -162,7 +162,7 @@
 
 .agendabox{
     width: 90%;
-    height: 40%;
+    height: 300px;
     padding: 10px;
     margin: 10px;
     background-color: chartreuse;
@@ -175,7 +175,7 @@
 
 .loginbox{
     width: 90%;
-    height: 40%;
+    height: 300px;
     padding: 10px;
     margin: 10px;
     margin-top: 40px;

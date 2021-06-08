@@ -36,4 +36,3 @@ class Ingredient{
     }
 
 }
-//Loop over ingrediënten onder private function in klasse Recept?
