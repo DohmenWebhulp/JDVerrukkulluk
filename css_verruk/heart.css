@@ -85,14 +85,14 @@
 .receptinfob {
     border: 10px solid blue;
     padding: 10px;
-    height: 95%;
+    height: 98%;
     width: 100%;
 }
 
 .receptinfor {
     border: 10px solid blue;
     padding: 0px;
-    height: 400px;
+    height: 500px;
     width: 100%;
 }
 
@@ -126,8 +126,8 @@
 }
 
 .butn {
-    width: 200px;
-    border-radius: 50%;
+    width: 150px;
+    border-radius: 5%;
 }
 
 .tekstbox {
@@ -143,29 +143,6 @@
 .carousel-inner img{
     width: 100%;
     height: 100%;
-}
-
-.block {
-    display: flex;
-    background-color: #FF0;   
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    height: 55%;
-    width: 100%;
-}
-
-.block-content {
-    display: flex;
-    width: 30%;
-    height: 30%;
-    justify-content: left;
-    align-items: left;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #F0F;
-    background-color: rgba(0,0,255,0.3);
-    border-radius: 5%;
 }
 
 .agendabox{
@@ -201,10 +178,28 @@
     color: white;
 }
 
+.block {
+    display: flex;
+    background-color: #FFF;  
+    justify-content: left;
+    align-items: baseline;
+    padding: 10px;
+    height: 80%;
+    width: 100%;
+}
+
+.block-content {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-radius: 0%;
+}
+
 .contactinfo{
-    height: 100px;
+    height: 250px;
     width: 100%;
     padding: 40px;
+    margin-top: 20px;
     background-color: orange;
     color: white;
 }

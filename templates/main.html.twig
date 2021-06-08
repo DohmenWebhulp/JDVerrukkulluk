@@ -19,33 +19,6 @@
 
     <script type="text/javascript" language="javascript" src="assets/jquery/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-    <style>
-        .block {
-            display: flex;
-            background-color: #FFF;  
-            justify-content: left;
-            align-items: baseline;
-            padding: 10px;
-            height: 80%;
-            width: 100%;
-        }
-
-        .block-content {
-            position: absolute;
-            width: 0%;
-            height: 100%;
-            border-radius: 0%;
-        }
-
-        .contactinfo{
-            height: 250px;
-            width: 100%;
-            padding: 40px;
-            margin-top: 20px;
-            background-color: orange;
-            color: white;
-        }
-    </style>
 </html>
 <body>
 <div class="container-fluid">
@@ -96,17 +69,41 @@
         <div class="col-md-3">
             <div class="agendabox">
                 <h2 class="logo">Agenda</h2>
-                <i class="fa fa-calendar fa-2x"></i> FontAwesome <a href="https://fontawesome.com/icons?d=gallery&m=free">Documentation</a><br>
-                <i class="fa fa-file-pdf"></i> <a href="https://www.layoutit.com/build">Layout-it</a>
+                <div class="row" style="padding: 15px">
+                    <div class="col-md-2">
+                        <i class="fa fa-calendar fa-2x"></i>
+                    </div>
+                    <div class="col-md-10"> <h3>FontAwesome</h3>
+                         <a href="https://fontawesome.com/icons?d=gallery&m=free">FontAwesome site</a>
+                    </div>
+                </div>
+                <div class="row" style="padding: 15px">
+                    <div class="col-md-2">
+                        <i class="fa fa-file-pdf fa-2x"></i>
+                    </div>
+                    <div class="col-md-10"> <h3>Layout-it</h3>
+                         <a href="https://www.layoutit.com/build">Layout-it site</a>
+                    </div>
+                </div>
             </div>
 
             <div class="loginbox">
                 <h2 class="logo">Login</h2>
+                <div style="margin-left: 50px">
+                    <div style="color: white">E-mail:</div>
+                    <input type="text" name="email" value="">
+                </div>
+                <div style="margin-left: 50px; margin-top: 20px">
+                    <div style="color: white">Gebruikersnaam:</div>
+                    <input type="text" name="gebruiker" value="">
+                </div>
+                <div  style="text-align: center; margin-top: 20px">
+                    <a href="https://www.w3schools.com/" type="button" class="btn btn-primary butn"><h4>Login</h4></a>
+                </div>
             </div>
         </div>
 
         <div class="col-md-9">
-            <h2>Content</h2>
             {%  block content %}
             {%  endblock %}
         </div>

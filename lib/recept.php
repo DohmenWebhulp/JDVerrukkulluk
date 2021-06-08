@@ -148,10 +148,18 @@ class Recept{
         //Price does not depend on hoeveelheid. You can't buy 1.5 bags.
 
         $ingr = $this->ophalenIngredient_r($recept_id);
-        $price = array_column($ingr, 'prijs');
-        $sum = array_sum($price);
-        //echo "<pre>";
-        //var_dump($sum);
+
+        $sum = 0;
+
+        foreach($ingr as $row){
+            if($row['Hoeveelheid'] % $row['Verpakking'] == 0){
+                $sumel = intdiv($row['Hoeveelheid'], $row['Verpakking']);
+            }else{
+                $sumel = intdiv($row['Hoeveelheid'], $row['Verpakking']) + 1;
+            }
+            $sum += $sumel * $row['prijs'];
+        }
+
         return($sum);
     }
 

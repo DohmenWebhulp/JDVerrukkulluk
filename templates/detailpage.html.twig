@@ -3,11 +3,11 @@
 
 {% block content %}
     <a href="index.php?action=homepage">HOMEPAGE</a>
-    <section><h1>Receptinformatie</h1>
+    <section>
         <div class="receptinfor">
             <div class="row">
                 <div class="col-md-4">
-                    <div style="background-image: url({{ data[0].foto }})" class="fotos"></div>
+                    <div style="background-image: url({{ data[0].foto }})"></div>
                 </div>
                 <div class="col-md-8">
                     <div class="flotl" style="padding-top: 20px">
@@ -32,15 +32,16 @@
                     <div style="clear: both">{{data[0].langeOmschrijving}}</div>
 
                     <!--JavaScript redirect naar boodschappenlijst-->
+                    <div style="margin-top: 30px">
+                        <a href="index.php?action=boodschappenlijst&id={{data[0].id}}" type="button" class="btn btn-primary butn flotl">
+                            Op Lijst
+                        </a>
 
-                    <a href="index.php?action=boodschappenlijst&id={{data[0].id}}" type="button" class="btn btn-primary butn flotl">
-                        Op Lijst
-                    </a>
-
-                    <div class="flotr"> <h2>Voeg toe aan Favorieten</h2>
-                        <i class="far fa-heart fa-4x" style="color: red"></i>
-                        <!--if click on heart met JavaScript-->
-                        <i class="fas fa-heart fa-4x" style="color: red"></i><br>
+                        <div class="flotr"> <h2>Voeg toe aan Favorieten</h2>
+                            <i class="far fa-heart fa-4x" style="color: red"></i>
+                            <!--if click on heart met JavaScript-->
+                            <i class="fas fa-heart fa-4x" style="color: red"></i><br>
+                        </div>
                     </div>
                     
                     <!--ajax call met JavaScript-->
@@ -131,7 +132,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li><br>
                                 {% endfor %}
                             </ul>
                         </p>

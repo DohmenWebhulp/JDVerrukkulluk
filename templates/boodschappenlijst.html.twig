@@ -36,7 +36,7 @@
                     {{bood.aantal}}
                 </div>
                 <div class="col-md-2">
-                    {{bood.aantal * bood.prijs}}
+                    <i class="fas fa-euro-sign" style="margin-right: 5px"></i>{{bood.aantal * bood.prijs}},-
                 </div>
                 <div class="col-md-2">
                     <i class="fas fa-check fa-2x" style="color: green"></i>
@@ -44,12 +44,22 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="tekstbox"></div>
-        <h2 class="flotl" style="margin-bottom: 50px; color: darkred">Totaal</h2>
-        <div class="flotr"><i class="fas fa-trash-alt fa-2x" style="color: red"></i></div>
-        <div class="flotr">
-            Totale Prijs
+        <div class="row" style="margin-top: 50px">
+            <div class="col-md-8">
+                <h2 style="margin-bottom: 50px; color: darkred">Totaal</h2>
+            </div>
+            <div class="col-md-2">
+                {% set sum = 0 %}
+                {% for bood in data %}
+                    {% set sum = sum + bood.aantal * bood.prijs %}
+                {% endfor %}
+                <i class="fas fa-euro-sign" style="margin-right: 5px"></i>{{sum}},-
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-trash-alt fa-2x" style="color: red"></i>
+            </div>
         </div>
+
     </section>
 
 {% endblock %}
