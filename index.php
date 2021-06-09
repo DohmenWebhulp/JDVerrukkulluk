@@ -24,9 +24,11 @@
     $ginfo = new GerechtInfo($db->getConnection());
     $ingred = new Ingredient($db->getConnection());
 
-    $recept_id = isset($_GET['id']) ? $_GET['id'] : null;
+    $recept_id = isset($_GET['id']) ? $_GET['id'] : 1;
     $action = isset($_GET['action']) ? $_GET['action'] : 'homepage';
     $gebruiker = isset($_GET['user_id']) ? $_GET['user_id'] : 1;
+    $rating = isset($_POST['waarde']) ? $_POST['waarde'] : 3;
+    var_dump($rating);
 
     switch($action){
 
@@ -74,7 +76,7 @@
 
         case 'waardering':
 
-            $ginfo->addWaardering($recept_id, $_POST['waarde'], date('Y/m/d', time()));
+            $ginfo->addWaardering($recept_id, $rating, date('Y/m/d', time()));
             $dat = $rece->ophalenRecept($recept_id);
             var_dump($dat); break;
         

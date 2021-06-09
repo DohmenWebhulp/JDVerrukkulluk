@@ -203,3 +203,17 @@
     background-color: orange;
     color: white;
 }
+
+.star {
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    width: 40px;
+}
+
+.star:hover {
+    color: #F00;
+}
+.red {
+    color: #F00;
+}

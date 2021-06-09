@@ -7,7 +7,7 @@
         <div class="receptinfor">
             <div class="row">
                 <div class="col-md-4">
-                    <div style="background-image: url({{ data[0].foto }})"></div>
+                    <img src="{{data[0].foto}}" style="width: 100%; height: 100%">
                 </div>
                 <div class="col-md-8">
                     <div class="flotl" style="padding-top: 20px">
@@ -18,11 +18,59 @@
                     <div style="clear: both"></div>
                     <div class="flotl"><h2>Heerlijke {{data[0].Naam}}!</h2></div>
                     <div class="flotr"><h2>Beoordeel dit Recept</h2>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <script>
+
+                            $(document).ready(function(){
+                                $(".star").click( function(){
+                                    var value = $(this).attr("data-value");
+                                    $('.star').each((index, elem) => {
+                                        $(elem).removeClass("red");
+                                        var itemValue = $(elem).attr('data-value');
+                                        if(itemValue <= value){
+                                            $(elem).addClass("red");
+                                        }
+                                    })
+
+                                    $.ajax({
+                                        url: "index.php?action=waardering?waarde=value",
+                                        method: "POST",
+                                        data: {waarde: value},
+                                        success: function(response){}
+                                    })
+                                })
+                                /*
+                                $(".star").hover( function(){
+                                    var value = $(this).attr("data-value");
+                                    $('.star').each((index, elem) => {
+                                        var itemValue = $(elem).attr('data-value');
+                                        if(itemValue <= value){
+                                            $(elem).addClass("red");
+                                        }
+                                    })
+                                }, function(){
+                                    $('.star').each((index, elem) => {
+                                        $(elem).removeClass("red");
+                                    })
+                                })*/
+                            })
+                        //$.ajax({
+                        //    url: "de-url-van-je-backend-functie",
+                        //    data: {
+                        //        id: 1 // de data die je gaat versturen
+                        //    }
+                        //    success: function(result) { // de callback
+                                    // result bevat nu de JSON die
+                                    // door PHP gestuurd is. 
+                        //            alert(result.naam); // "Henkie"
+                         //   }
+                        //})
+                        </script>
+                        <span class="fa fa-star checked star" data-value="1"></span>
+                        <span class="fa fa-star checked star" data-value="2"></span>
+                        <span class="fa fa-star checked star" data-value="3"></span>
+                        <span class="fa fa-star star" data-value="4"></span>
+                        <span class="fa fa-star star" data-value="5"></span>
+                        
                     </div>
                     <div style="clear: both"></div>
                     <div>
