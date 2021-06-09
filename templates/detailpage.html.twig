@@ -7,16 +7,23 @@
         <div class="receptinfor">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{data[0].foto}}" style="width: 100%; height: 100%">
+                    <img src="{{data.foto}}" style="width: 100%; height: 100%">
                 </div>
                 <div class="col-md-8">
                     <div class="flotl" style="padding-top: 20px">
                         <i class="fas fa-user-friends fa-2x"> 4</i>
-                        <i class="fas fa-euro-sign fa-2x" style="margin-left: 10px"> {{data[0].Totale_Prijs}},- </i>
-                        <i class="fab fa-gripfire fa-2x" style="margin-left: 10px"> {{data[0].Totaal_Calorieën}} </i>
+                        <i class="fas fa-euro-sign fa-2x" style="margin-left: 10px"> {{data.Totale_Prijs}},- </i>
+                        <i class="fab fa-gripfire fa-2x" style="margin-left: 10px"> {{data.Totaal_Calorieën}} </i>
+                    </div>
+                    <div class="flotr" style="padding-top: 20px"><h5>Gemiddelde Waardering:</h5>
+                        <span class="fa fa-star gwstar" id="{{record.id}}_star1" data-value="1"></span>
+                        <span class="fa fa-star gwstar" id="{{record.id}}_star2" data-value="2"></span>
+                        <span class="fa fa-star gwstar" id="{{record.id}}_star3" data-value="3"></span>
+                        <span class="fa fa-star gwstar" id="{{record.id}}_star4" data-value="4"></span>
+                        <span class="fa fa-star gwstar" id="{{record.id}}_star5" data-value="5"></span>
                     </div>
                     <div style="clear: both"></div>
-                    <div class="flotl"><h2>Heerlijke {{data[0].Naam}}!</h2></div>
+                    <div class="flotl"><h2>Heerlijke {{data.Naam}}!</h2></div>
                     <div class="flotr"><h2>Beoordeel dit Recept</h2>
                         <script>
 
@@ -32,42 +39,13 @@
                                     })
 
                                     $.ajax({
-                                        url: "index.php?action=waardering&id={{data[0].id}}",
+                                        url: "index.php?action=waardering&id={{data.id}}",
                                         method: "POST",
                                         data: {waarde: value},
                                         success: function(response){}
                                     })
                                 })
-                                /*
-                                $(".star").hover( function(){
-                                    var value = $(this).attr("data-value");
-                                    if(click){
-                                        $(elem).removeClass("red");
-                                        $('.star').each((index, elem) => {
-                                        var itemValue = $(elem).attr('data-value');
-                                        if(itemValue <= value){
-                                            $(elem).addClass("red");
-                                    }
-
-                                        }
-                                    })
-                                }, function(){
-                                    $('.star').each((index, elem) => {
-                                        $(elem).removeClass("red");
-                                    })
-                                })*/
                             })
-                        //$.ajax({
-                        //    url: "de-url-van-je-backend-functie",
-                        //    data: {
-                        //        id: 1 // de data die je gaat versturen
-                        //    }
-                        //    success: function(result) { // de callback
-                                    // result bevat nu de JSON die
-                                    // door PHP gestuurd is. 
-                        //            alert(result.naam); // "Henkie"
-                         //   }
-                        //})
                         </script>
                         <span class="fa fa-star checked star" data-value="1"></span>
                         <span class="fa fa-star checked star" data-value="2"></span>
@@ -76,16 +54,31 @@
                         <span class="fa fa-star star" data-value="5"></span>
                         
                     </div>
+                    <script>
+
+                        $(document).ready(function(){
+                            var gemw = {{data.Gemiddelde_Waardering}};
+                            $('.gwstar').each((index, elem) =>{
+                                var itemValue = $(elem).attr('data-value');
+                                $(elem).removeClass("red");
+                                if(Math.ceil(gemw) >= itemValue){
+                                    $(elem).addClass("red");
+                                }
+                            })
+                            console.log(gemw);
+                        })
+
+                    </script>
                     <div style="clear: both"></div>
                     <div>
-                        <h5 class="flotl">Keuken : {{data[0].Type_Keuken.Omschrijving}}</h5> 
-                        <h5 class="flotr">Type : {{data[0].Type_Voedsel.Omschrijving}}</h5><br>
+                        <h5 class="flotl">Keuken : {{data.Type_Keuken.Omschrijving}}</h5> 
+                        <h5 class="flotr">Type : {{data.Type_Voedsel.Omschrijving}}</h5><br>
                     </div>
-                    <div style="clear: both">{{data[0].langeOmschrijving}}</div>
+                    <div style="clear: both">{{data.langeOmschrijving}}</div>
 
                     <!--JavaScript redirect naar boodschappenlijst-->
                     <div style="margin-top: 30px">
-                        <a href="index.php?action=boodschappenlijst&id={{data[0].id}}" type="button" class="btn btn-primary butn flotl">
+                        <a href="index.php?action=boodschappenlijst&id={{data.id}}" type="button" class="btn btn-primary butn flotl">
                             Op Lijst
                         </a>
 
@@ -121,7 +114,7 @@
                     <div class="tab-pane fade" id="ingred">
                         <p>
                             <ul style="list-style-type: none; padding: 0; margin: 0">
-                                {% for ingr in data[0].Ingrediënten %}
+                                {% for ingr in data.Ingrediënten %}
                                     <li>
                                         <div class="row">
                                             <div class="col-md-1">
@@ -147,7 +140,7 @@
                     <div class="tab-pane active" id="bered">
                         <p>
                             <ul style="list-style-type: none; padding: 0; margin: 0">
-                                {% for bereid in data[0].Bereiding %}
+                                {% for bereid in data.Bereiding %}
                                     <li>
                                         <div class="row">
                                             <div class="col-md-1">
@@ -169,7 +162,7 @@
                     <div class="tab-pane fade" id="opmed">
                         <p>
                             <ul style="list-style-type: none; padding: 0; margin: 0">
-                                {% for opm in data[0].Opmerkingen %}
+                                {% for opm in data.Opmerkingen %}
                                     <li>
                                         <div class="row">
                                             <div class="col-md-1">

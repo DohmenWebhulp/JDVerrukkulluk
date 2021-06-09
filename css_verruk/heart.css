@@ -211,6 +211,12 @@
     width: 40px;
 }
 
+.gwstar {
+    font-size: 15px;
+    color: blue;
+    width: 30px;
+}
+
 .star:hover {
     color: #F00;
 }

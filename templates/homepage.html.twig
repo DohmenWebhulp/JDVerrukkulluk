@@ -31,41 +31,12 @@
                             var gemw = {{record.Gemiddelde_Waardering}};
                             $('.fa-star').each((index, elem) =>{
                                 var itemValue = $(elem).attr('data-value');
+                                $(elem).removeClass("red");
                                 if(Math.ceil(gemw) >= itemValue){
                                     $(elem).addClass("red");
-                                    console.log("added");
                                 }
                             })
                             console.log(gemw);
-                            /*if(gemw <= 3){
-                                console.log("3 stars");
-                                $('#star1').addClass("red");
-                                $('#star2').addClass("red");
-                                $('#star3').addClass("red");
-                            }*/
-                            /*switch(gemw){
-                                case <= 1:
-                                    $('#star1').addClass("red");
-                                case > 1 and <= 2:
-                                    $('#star1').addClass("red");
-                                    $('#star2').addClass("red");
-                                case > 2 and <= 3:
-                                    console.log("3 stars");
-                                    $('#star1').addClass("red");
-                                    $('#star2').addClass("red");
-                                    $('#star3').addClass("red");
-                                case > 3 and <= 4:
-                                    $('#star1').addClass("red");
-                                    $('#star2').addClass("red");
-                                    $('#star3').addClass("red");
-                                    $('#star4').addClass("red");
-                                case > 4:
-                                    $('#star1').addClass("red");
-                                    $('#star2').addClass("red");
-                                    $('#star3').addClass("red");
-                                    $('#star4').addClass("red");
-                                    $('#star5').addClass("red");
-                            }*/
                         })
 
                     </script>

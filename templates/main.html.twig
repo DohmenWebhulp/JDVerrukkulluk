@@ -35,7 +35,7 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="{{data[0].foto}}" alt="{{data[0].Naam}}" width="100%" height="500">
+                <img src="{{data[0].foto}}" alt="{{data.Naam}}" width="100%" height="500">
                 </div>
                 <div class="carousel-item">
                 <img src="{{data[1].foto}}" alt="{{data[1].Naam}}" width="100%" height="500">
@@ -58,7 +58,7 @@
         </div>
     {% else %}
         <div class="block">
-            <img src="{{data[0].foto}}" alt="{{data[0].Naam}}" width="100%" height="100%">
+            <img src="{{data.foto}}" alt="{{data.Naam}}" width="100%" height="100%">
             <div class="block-content">
                 <img src="assets/img/logo-v2.png" style="width: 500px; height: 200px">
             </div>

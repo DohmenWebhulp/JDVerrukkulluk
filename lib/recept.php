@@ -21,8 +21,48 @@ class Recept{
         }
 
         $result = mysqli_query($this->connection, $sql);
+        if(is_null($recept_id)){
+            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 
-        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                $user = $this->ophalenUser_r($row['user_id']);
+                $keuken = $this->ophalenKeuken_r($row['keuken_id']);
+                $type = $this->ophalenType_r($row['type_id']);
+                $ingr = $this->ophalenIngredient_r($row['ID']);
+        
+                $bereid = $this->ophalenBereiding_r($row['ID']);
+                $waarde = $this->ophalenWaardering_r($row['ID']);
+                $opm = $this->ophalenOpmerkingen_r($row['ID']);
+                $favo = $this->ophalenFavorieten_r($row['ID']);
+        
+                $calos = $this->calculateCalories($row['ID']);
+                $prijs = $this->calculatePrice($row['ID']);
+                $avgw = $this->calculateAvgWaardering($row['ID']);
+                $recept = [
+        
+                    'id' => $row['ID'],
+                    'Naam' => $row['titel'],
+                    'Datum' => $row['datum'],
+                    'korteOmschrijving' => $row['korte_omschrijving'],
+                    'langeOmschrijving' => $row['lange_omschrijving'],
+                    'foto' => $row['foto'],
+                    'Type_Keuken' => $keuken,
+                    'Type_Voedsel' => $type,
+                    'Gebruikersinfo' => $user,
+                    'Ingrediënten' => $ingr,
+                    'Opmerkingen' => $opm,
+                    'Bereiding' => $bereid,
+                    'Waardering' => $waarde,
+                    'Favorieten' => $favo,
+                    'Totaal_Calorieën' => $calos,
+                    'Totale_Prijs' => $prijs,
+                    'Gemiddelde_Waardering' => $avgw
+                ];
+        
+                $tot_recept[] = $recept;
+            }
+        }else{
+            
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
             $user = $this->ophalenUser_r($row['user_id']);
             $keuken = $this->ophalenKeuken_r($row['keuken_id']);
@@ -57,8 +97,7 @@ class Recept{
                 'Totale_Prijs' => $prijs,
                 'Gemiddelde_Waardering' => $avgw
             ];
-    
-            $tot_recept[] = $recept;
+            $tot_recept = $recept;
         }
 
         return($tot_recept);
