@@ -25,12 +25,56 @@
                     </div>
                     <div style="clear: both"></div>
                     <div class="flotl"><h5>Heerlijke {{record.Naam}}!</h5></div>
+                    <script>
+
+                        $(document).ready(function(){
+                            var gemw = {{record.Gemiddelde_Waardering}};
+                            $('.fa-star').each((index, elem) =>{
+                                var itemValue = $(elem).attr('data-value');
+                                if(Math.ceil(gemw) >= itemValue){
+                                    $(elem).addClass("red");
+                                    console.log("added");
+                                }
+                            })
+                            console.log(gemw);
+                            /*if(gemw <= 3){
+                                console.log("3 stars");
+                                $('#star1').addClass("red");
+                                $('#star2').addClass("red");
+                                $('#star3').addClass("red");
+                            }*/
+                            /*switch(gemw){
+                                case <= 1:
+                                    $('#star1').addClass("red");
+                                case > 1 and <= 2:
+                                    $('#star1').addClass("red");
+                                    $('#star2').addClass("red");
+                                case > 2 and <= 3:
+                                    console.log("3 stars");
+                                    $('#star1').addClass("red");
+                                    $('#star2').addClass("red");
+                                    $('#star3').addClass("red");
+                                case > 3 and <= 4:
+                                    $('#star1').addClass("red");
+                                    $('#star2').addClass("red");
+                                    $('#star3').addClass("red");
+                                    $('#star4').addClass("red");
+                                case > 4:
+                                    $('#star1').addClass("red");
+                                    $('#star2').addClass("red");
+                                    $('#star3').addClass("red");
+                                    $('#star4').addClass("red");
+                                    $('#star5').addClass("red");
+                            }*/
+                        })
+
+                    </script>
                     <div class="flotr">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star" id="{{record.id}}_star1" data-value="1"></span>
+                        <span class="fa fa-star" id="{{record.id}}_star2" data-value="2"></span>
+                        <span class="fa fa-star" id="{{record.id}}_star3" data-value="3"></span>
+                        <span class="fa fa-star" id="{{record.id}}_star4" data-value="4"></span>
+                        <span class="fa fa-star" id="{{record.id}}_star5" data-value="5"></span>
                     </div>
                     <div style="clear: both"></div>
                     <div style="clear: both">{{record.korteOmschrijving}}</div>

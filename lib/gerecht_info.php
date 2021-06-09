@@ -55,9 +55,6 @@ class GerechtInfo{
             $sql = "INSERT INTO gerecht_info (record_type, recept_id, user_id, datum)
             VALUES ('F', $recept_id, $user_id, '$datum')";
             $result = mysqli_query($this->connection, $sql);
-            echo "User stored in database";
-        }else{
-            echo "User already in database";
         }
     }
 
@@ -79,9 +76,6 @@ class GerechtInfo{
         if($bool){
             $sql = "DELETE FROM gerecht_info WHERE record_type = 'F' and user_id = $user_id";
             $result = mysqli_query($this->connection, $sql);
-            echo "User removed from database";
-        }else{
-            echo "User not found in database";
         }
     }
 
@@ -90,7 +84,6 @@ class GerechtInfo{
         $sql = "INSERT INTO gerecht_info (record_type, recept_id, datum, stap_of_aantal)
         VALUES ('W', $recept_id, '$datum', $waarde)";
         $result = mysqli_query($this->connection, $sql);
-        echo "Rating stored in database";
 
         return($result);
 

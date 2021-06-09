@@ -27,8 +27,7 @@
     $recept_id = isset($_GET['id']) ? $_GET['id'] : 1;
     $action = isset($_GET['action']) ? $_GET['action'] : 'homepage';
     $gebruiker = isset($_GET['user_id']) ? $_GET['user_id'] : 1;
-    $rating = isset($_POST['waarde']) ? $_POST['waarde'] : 3;
-    var_dump($rating);
+    $rating = isset($_POST['waarde']) ? $_POST['waarde'] : 1;
 
     switch($action){
 
@@ -76,9 +75,13 @@
 
         case 'waardering':
 
+            header('Content-Type: application/json');
             $ginfo->addWaardering($recept_id, $rating, date('Y/m/d', time()));
-            $dat = $rece->ophalenRecept($recept_id);
-            var_dump($dat); break;
+            $data = $rece->ophalenRecept($recept_id);
+            $ward = array($data[0]['id'], $rating, $data[0]['Gemiddelde_Waardering']);
+            echo json_encode($ward);
+            die();
+            break;
         
     }
 

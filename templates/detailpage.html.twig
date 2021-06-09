@@ -32,7 +32,7 @@
                                     })
 
                                     $.ajax({
-                                        url: "index.php?action=waardering?waarde=value",
+                                        url: "index.php?action=waardering&id={{data[0].id}}",
                                         method: "POST",
                                         data: {waarde: value},
                                         success: function(response){}
@@ -41,10 +41,14 @@
                                 /*
                                 $(".star").hover( function(){
                                     var value = $(this).attr("data-value");
-                                    $('.star').each((index, elem) => {
+                                    if(click){
+                                        $(elem).removeClass("red");
+                                        $('.star').each((index, elem) => {
                                         var itemValue = $(elem).attr('data-value');
                                         if(itemValue <= value){
                                             $(elem).addClass("red");
+                                    }
+
                                         }
                                     })
                                 }, function(){
