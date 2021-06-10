@@ -23,11 +23,19 @@
     $schap = new Boodschappen($db->getConnection());
     $ginfo = new GerechtInfo($db->getConnection());
     $ingred = new Ingredient($db->getConnection());
+    $use = new User($db->getConnection());
+
+    $dat = $use->addUser('Desse Johme', 'dj@heerlijk.com');
+    var_dump($dat);
 
     $recept_id = isset($_GET['id']) ? $_GET['id'] : 1;
     $action = isset($_GET['action']) ? $_GET['action'] : 'homepage';
     $gebruiker = isset($_POST['user_id']) ? $_POST['user_id'] : 2;
     $rating = isset($_POST['waarde']) ? $_POST['waarde'] : 1;
+    $keyw = isset($_POST['term']) ? $_POST['term'] : "Ketjap";
+    $email = isset($_POST['email']) ? $_POST['email'] : "aa@heerlijk.com";
+    $naam = isset($_POST['gebruiker']) ? $_POST['gebruiker'] : "Arie Appel";
+
 
     switch($action){
 
@@ -36,8 +44,6 @@
             $data = $rece->ophalenRecept();
             $template = 'homepage.html.twig';
             $title = "homepage";
-            //echo "<pre>";
-            //var_dump($data); 
             break;
 
         case 'detailpage':
@@ -45,8 +51,6 @@
             $data = $rece->ophalenRecept($recept_id);
             $template = 'detailpage.html.twig';
             $title = "detailpage";
-            //echo "<pre>";
-            //var_dump($data); 
             break;
 
         case 'boodschappenlijst':
@@ -55,8 +59,6 @@
             $data = $schap->ophalenBoodschappen($gebruiker); //Andere user_id dan degene die het recept gemaakt heeft
             $template = 'boodschappenlijst.html.twig';
             $title = 'boodschappenlijst';
-            //echo "<pre>";
-            //var_dump($data);
             break;
 
         case 'favorietLeeg':
@@ -87,9 +89,20 @@
             die();
             break;
 
+        case 'zoekFunctie':
+
+            $data = $rece->zoeken($keyw);
+            $template = 'homepage.html.twig';
+            $title = "homepage";
+            break;
+
+
         case 'userStore':
 
             echo "User stored in database";
+            var_dump($email, $naam);
+            die();
+            break;
         
     }
 

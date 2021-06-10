@@ -55,18 +55,13 @@
             <div class="block-content">
                 <img src="assets/img/logo-v2.png" style="width: 500px; height: 200px">
             </div>
-            <div class="block-right">
-                <i class="fas fa-search fa-2x"></i>
-                <input type="text" value="Zoeken" data-toggle="dropdown">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Homepage</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.php?action=detailpage&id=1">Detailpage {{data[0].Naam}}</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.php?action=boodschappenlijst&id=1">Boodschappen</a>
+            <form action="index.php?action=zoekFunctie" method="POST">
+                <div class="block-right">
+                    <i class="fas fa-search fa-2x"></i>
+                        <input type="text" name="term" value="Zoeken">
+                    <i class="fas fa-bars fa-2x" style="color: orange; margin-left: 20px"></i>
                 </div>
-                <i class="fas fa-bars fa-2x" style="color: orange; margin-left: 20px"></i>
-            </div>
+            </form>
         </div>
     {% else %}
         <div class="block">
@@ -78,17 +73,13 @@
             <div class="block-content">
                 <img src="assets/img/logo-v2.png" style="width: 500px; height: 200px">
             </div>
-            <div class="block-right">
-                <i class="fas fa-search fa-2x"></i>
-                <input type="text" value="Zoeken" data-toggle="dropdown">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="index.php?action=homepage">Homepage</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.php?action=detailpage&id=1">Detailpage {{data.Naam}}</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.php?action=boodschappenlijst&id=1">Boodschappen</a>
+            <form action="index.php?action=zoekFunctie" method="POST">
+                <div class="block-right">
+                    <i class="fas fa-search fa-2x"></i>
+                        <input type="text" name="term" value="Zoeken">
+                    <i class="fas fa-bars fa-2x" style="color: orange; margin-left: 20px"></i>
                 </div>
-            </div>
+            </form>
         </div>
     {% endif %}
 
@@ -126,7 +117,7 @@
                         <input type="text" name="gebruiker" value="">
                     </div>
                     <div  style="text-align: center; margin-top: 20px">
-                        <input type="button" class="btn btn-primary butn" value="Login">
+                        <input type="submit" class="btn btn-primary butn" value="Login">
                     </div>
                 </form>
             </div>

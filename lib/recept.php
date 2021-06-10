@@ -103,6 +103,23 @@ class Recept{
         return($tot_recept);
     }
 
+    public function zoeken($keyword) {
+
+        $recepten = $this->ophalenRecept();
+        $gevonden = [];
+
+        foreach($recepten as $recept) {
+
+            $receptText = json_encode($recept);
+            if(strpos($receptText, $keyword)) {
+                $gevonden[] = $recept;
+            }
+
+        }
+
+        return($gevonden);
+    }
+
     private function ophalenUser_r($user_id){
         
         $user = new User($this->connection);
