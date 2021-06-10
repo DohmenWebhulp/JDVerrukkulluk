@@ -11,9 +11,9 @@
                 </div>
                 <div class="col-md-8">
                     <div class="flotl" style="padding-top: 20px">
-                        <i class="fas fa-user-friends fa-2x"> 4</i>
-                        <i class="fas fa-euro-sign fa-2x" style="margin-left: 10px"> {{data.Totale_Prijs}},- </i>
-                        <i class="fab fa-gripfire fa-2x" style="margin-left: 10px"> {{data.Totaal_Calorieën}} </i>
+                        <i class="fas fa-user-friends fa-2x"></i> <span style="font-size: 2em"> 4</span>
+                        <i class="fas fa-euro-sign fa-2x" style="margin-left: 10px"></i> <span style="font-size: 2em">{{data.Totale_Prijs}},-</span>
+                        <i class="fab fa-gripfire fa-2x" style="margin-left: 10px"></i> <span style="font-size: 2em">{{data.Totaal_Calorieën}}</span> 
                     </div>
                     <div class="flotr" style="padding-top: 20px"><h5>Gemiddelde Waardering:</h5>
                         <span class="fa fa-star gwstar" id="{{record.id}}_star1" data-value="1"></span>
@@ -82,10 +82,39 @@
                             Op Lijst
                         </a>
 
-                        <div class="flotr"> <h2>Voeg toe aan Favorieten</h2>
-                            <i class="far fa-heart fa-4x" style="color: red"></i>
-                            <!--if click on heart met JavaScript-->
-                            <i class="fas fa-heart fa-4x" style="color: red"></i><br>
+                        <div class="flotr"> <h2 id="favori">Voeg toe aan Favorieten</h2>
+                            <script>
+
+                                $(document).ready(function(){
+                                    $('.fa-heart').click(function(){
+                                        if($('.fa-heart').attr('data-bool') == 0){
+                                            $('.fa-heart').removeClass("far");
+                                            $('.fa-heart').addClass("fas");
+                                            $('.fa-heart').attr('data-bool', 1);
+                                            $('h2#favori').html("<h2>Verwijder uit Favorieten</h2>");
+                                            $.ajax({
+                                                url: "index.php?action=favorietLeeg&id={{data.id}}",
+                                                method: "POST",
+                                                data: {user_id: 3},
+                                                success: function(response){}
+                                            })
+                                        }else{
+                                            $('.fa-heart').removeClass("fas");
+                                            $('.fa-heart').addClass("far");
+                                            $('.fa-heart').attr('data-bool', 0);
+                                            $('h2#favori').html("<h2>Voeg toe aan Favorieten</h2>");
+                                            $.ajax({
+                                                url: "index.php?action=favorietVol&id={{data.id}}",
+                                                method: "POST",
+                                                data: {user_id: 3},
+                                                success: function(response){}
+                                            })
+                                        }
+                                    })
+                                })
+
+                            </script>
+                            <i class="far fa-heart heart fa-4x" style="color: red" id="empty" data-bool="0"></i>
                         </div>
                     </div>
                     

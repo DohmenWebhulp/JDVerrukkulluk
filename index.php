@@ -26,7 +26,7 @@
 
     $recept_id = isset($_GET['id']) ? $_GET['id'] : 1;
     $action = isset($_GET['action']) ? $_GET['action'] : 'homepage';
-    $gebruiker = isset($_GET['user_id']) ? $_GET['user_id'] : 1;
+    $gebruiker = isset($_POST['user_id']) ? $_POST['user_id'] : 2;
     $rating = isset($_POST['waarde']) ? $_POST['waarde'] : 1;
 
     switch($action){
@@ -61,27 +61,35 @@
 
         case 'favorietLeeg':
 
+            header('Content-Type: application/json');
             $ginfo->addFavoriet($recept_id, $gebruiker, date('Y/m/d', time()));
-            $dat = $rece->ophalenRecept($recept_id);
-            echo "<pre>";
-            var_dump($dat); break;
+            $favo = array($gebruiker, 1);
+            echo json_encode($favo);
+            die();
+            break;
 
         case 'favorietVol':
 
-            $ginfo->removeFavoriet($recept_id, $gebruiker, date('Y/m/d', time()));
-            $dat = $rece->ophalenRecept($recept_id);
-            echo "<pre>";
-            var_dump($dat); break;
+            header('Content-Type: application/json');
+            $ginfo->removeFavoriet($recept_id, $gebruiker);
+            $favo = array($gebruiker, 0);
+            echo json_encode($favo);
+            die();
+            break;
 
         case 'waardering':
 
             header('Content-Type: application/json');
             $ginfo->addWaardering($recept_id, $rating, date('Y/m/d', time()));
             $data = $rece->ophalenRecept($recept_id);
-            $ward = array($data[0]['id'], $rating, $data[0]['Gemiddelde_Waardering']);
+            $ward = array($data['id'], $rating, $data[0]['Gemiddelde_Waardering']);
             echo json_encode($ward);
             die();
             break;
+
+        case 'userStore':
+
+            echo "User stored in database";
         
     }
 
