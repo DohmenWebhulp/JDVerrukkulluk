@@ -1,5 +1,8 @@
 <!-- Headings -->
-# Heading 1
+# De Verrukkulluk website
+
+Dit is de website gemaakt door mij voor het project Verrukkulluk.
+
 ## Heading 2
 
 <!-- Italics -->
