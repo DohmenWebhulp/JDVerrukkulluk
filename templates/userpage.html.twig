@@ -1,0 +1,22 @@
+{# Opnemen van de "Main" file #}
+{% extends "main.html.twig" %}
+
+{# nu de block content op in de main pagina vullen #}
+{% block content %}
+    {# Dit is commentaar #}
+
+    {# Print #}
+
+    <h4>U bevindt zich nu op de {{  title }}</h4>
+
+{# Loop #}
+    <div class="row">
+        {% if data == 0 %}
+            <h2>Probeer opnieuw</h2>
+        {% else %}
+            <h2>Welkom {{data.Gebruikersnaam}}, U bent nu ingelogd.</h2>
+        {% endif %}
+        <a href="index.php?action=homepage">Ga terug naar de Homepage</a>
+    </div>
+
+{% endblock %}

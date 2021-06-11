@@ -25,9 +25,6 @@
     $ingred = new Ingredient($db->getConnection());
     $use = new User($db->getConnection());
 
-    $dat = $use->addUser('Desse Johme', 'dj@heerlijk.com');
-    var_dump($dat);
-
     $recept_id = isset($_GET['id']) ? $_GET['id'] : 1;
     $action = isset($_GET['action']) ? $_GET['action'] : 'homepage';
     $gebruiker = isset($_POST['user_id']) ? $_POST['user_id'] : 2;
@@ -35,7 +32,6 @@
     $keyw = isset($_POST['term']) ? $_POST['term'] : "Ketjap";
     $email = isset($_POST['email']) ? $_POST['email'] : "aa@heerlijk.com";
     $naam = isset($_POST['gebruiker']) ? $_POST['gebruiker'] : "Arie Appel";
-
 
     switch($action){
 
@@ -96,17 +92,36 @@
             $title = "homepage";
             break;
 
-
         case 'userStore':
 
-            echo "User stored in database";
-            var_dump($email, $naam);
-            die();
+            $valid = validation($email);
+            if($valid){
+                $usid = $use->addUser($naam, $email);
+                $data = $use->ophalenUser($usid);
+            }else{
+                $usid = 0;
+                $data = 0;
+            }
+            
+            $template = 'userpage.html.twig';
+            $title = 'userpage';
             break;
         
     }
 
     $template = $twig->load($template);
     echo $template->render(["title" => $title, "data" => $data]);
+
+    function validation($email){
+
+        $bool = TRUE;
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $bool = FALSE;
+        }
+
+        return($bool);
+
+    }
 
 ?>

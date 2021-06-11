@@ -38,8 +38,10 @@ class User{
 
     public function addUser($gnaam, $email){
 
-        //New user is not allowed same username OR email-adres as one found in database.
         //User only gets added if not already found in database.
+        //New user is not allowed same username OR email-adres as one found in database.
+        //If both are the same, the existing user is returned.
+        //If both are not the same, the new user is added to the database and his last position in the databse is returned.
 
         $users = $this->ophalenUsers();
 
@@ -47,11 +49,15 @@ class User{
 
         foreach($users as $user){
 
-            if(($user['Gebruikersnaam'] == $gnaam) or ($user['Emailadres'] == $email)){
+            if(($user['Gebruikersnaam'] == $gnaam) and ($user['Emailadres'] == $email)){
 
                 $bool = TRUE;
                 $uid = $user['ID'];
                 
+            }elseif((($user['Gebruikersnaam'] == $gnaam) and ($user['Emailadres'] != $email)) or (($user['Gebruikersnaam'] != $gnaam) and ($user['Emailadres'] == $email))){
+
+                $bool = TRUE;
+                $uid = 0;
             }
         }
 
@@ -62,7 +68,6 @@ class User{
             $sql = "INSERT INTO user (ID, Gebruikersnaam, Wachtwoord, Emailadres)
             VALUES ($new_id, '$gnaam', '$gnaam', '$email')";
             $result = mysqli_query($this->connection, $sql);
-            var_dump($result);
             return($new_id);
 
         }else{

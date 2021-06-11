@@ -66,7 +66,9 @@
     {% else %}
         <div class="block">
         {% if title == "boodschappenlijst" %}
-            <img src="screenshots/boodsc.jpg" alt="{{data.Naam}}" width="100%" height="100%">
+            <img src="screenshots/boodsc.jpg" alt="boodschappen" width="100%" height="100%">
+        {% elseif title == "userpage" %}
+            <img src="screenshots/inlog.jpg" alt="inloggen" width="100%" height="100%">
         {% else %}
             <img src="{{data.foto}}" alt="{{data.Naam}}" width="100%" height="100%">
         {% endif %}
@@ -107,7 +109,7 @@
 
             <div class="loginbox">
                 <h2 class="logo">Login</h2>
-                <form action="index.php?action=userStore&user_id=1" method="POST">
+                <form action="index.php?action=userStore" method="POST">
                     <div style="margin-left: 50px">
                         <div style="color: white">E-mail:</div>
                         <input type="text" name="email" value="">
