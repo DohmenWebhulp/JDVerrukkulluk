@@ -3,7 +3,79 @@
 
 Dit is de website gemaakt door mij voor het project Verrukkulluk.
 
-## Heading 2
+## Structuur 
+
+De site bestaat uit het main frame dat gekoppeld kan worden aan 4 verschillende pagina's, te weten:
+
+* De Homepage.
+* De Detailpagina.
+* De Boodschappenlijst.
+* De Gebruikerspagina.
+
+## Main Frame
+
+Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten.
+
+De Agenda en de Login zijn gesitueerd aan de linkerzijde. Hierin kan men inloggen als de gebruiker in de database kan worden gevonden. Anders wordt er een nieuwe gebruiker gecreëerd en dan toegevoegd aan de database, mits de email of gebruikersnaam al niet bestaat. Hierna wordt de gebruiker doorgestuurd naar de Gebruikerspagina.
+
+Onderaan vindt men de contactinformatie van de site.
+
+## Homepage
+
+De homepage ziet er als volgt uit:
+
+![homepage](screenshots/hamburger.jpg)
+
+Op de homepage zijn alle recepten te zien samen met wat informatie, bestaande uit:
+
+* Een foto van het recept.
+* Het aantal personen.
+* Het aantal Calorieën .
+* De prijs van het recept.
+* De titel van het recept.
+* De gemiddelde waardering.
+* Een korte omschrijving.
+
+Ook is er onderaan een knop die de gebruiker doorstuurt naar de Detailpagina van het desbetreffende recept.
+
+## Detailpagina
+
+Op de Detailpagina staan naast de informatie op de homepage nog meer details over het recept, waaronder
+
+* Het Type Keuken waarin het recept is gemaakt.
+* Het Type Voedsel wat het recept representeert.
+* Een mogelijkheid voor de gebruiker het recept toe te voegen aan zijn of haar favorietenlijstje.
+* Een knop Op Lijst.
+* Een tab met:
+    * Ingrediënten nodig voor het maken van het recept.
+    * De Bereidingswijze voor het recept.
+    * Opmerkingen van gebruikers.
+
+Wanneer de gebruiker het recept toevoegt aan zijn favorietenlijstje, wordt de gebruiker direct toegevoegd aan de database. Tegelijkertijd wordt het hartje gevuld. De gebruiker kan dit ongedaan maken door nog een keer op het nu volle hart te klikken.
+
+Klikt men op de knop Op Lijst, dan wordt men doorgestuurd naar de Boodschappenlijst.
+
+### _Ingrediënten_
+
+In de tab Ingrediënten staan alle ingrediënten die horen bij het desbetreffende recept. Elke Ingrediëntregel bestaat uit:
+
+* Een foto van het ingrediënt.
+* De titel van het ingrediënt.
+* Een korte beschrijving van het ingrediënt.
+* De hoeveelheid die aangeeft hoeveel er nodig is van dit ingrediënt om het recept te maken.
+
+### _Bereidingswijze_
+
+In de tab Bereidingswijze staat het stappenplan voor het maken van het recept.
+
+### _Opmerkingen_
+
+In de tab Opmerkingen vindt men beoordelingen van bepaalde gebruikers over het recept.
+
+## Boodschappenlijst
+
+Op de boodschappenlijst staan alle ingrediënten van die recepten waarvan de gebruiker op de knop Op Lijst heeft geklikt op de Detailpagina.
+
 
 <!-- Italics -->
 _This text is italic_
