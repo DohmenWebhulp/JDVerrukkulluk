@@ -96,13 +96,16 @@
 
             $valid = validation($email);
             if($valid){
+
                 $usid = $use->addUser($naam, $email);
                 $data = $use->ophalenUser($usid);
+                
             }else{
+
                 $usid = 0;
                 $data = 0;
             }
-            
+
             $template = 'userpage.html.twig';
             $title = 'userpage';
             break;
