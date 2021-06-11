@@ -59,6 +59,11 @@ class User{
                 $bool = TRUE;
                 $uid = 0;
             }
+            //else{
+
+                //$bool = TRUE;
+                //$uid = -1;
+            //}
         }
 
         if(!$bool){

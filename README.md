@@ -17,7 +17,7 @@ ___
 
 ## Main Frame
 
-Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten.
+Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten. Ook is er rechtsboven een zoekfunctie, die zoekt op trefwoorden (substrings) aanwezig in de informatie over een bepaald recept. Een druk op enter laat alle recepten zien die de opgegeven substring hebben.
 
 De Agenda en de Login zijn gesitueerd aan de linkerzijde. Hierin kan men inloggen als de gebruiker in de database kan worden gevonden. Anders wordt er een nieuwe gebruiker gecreëerd en dan toegevoegd aan de database, mits de email of gebruikersnaam al niet bestaat. Hierna wordt de gebruiker doorgestuurd naar de Gebruikerspagina.
 
