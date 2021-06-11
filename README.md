@@ -12,6 +12,9 @@ De site bestaat uit het main frame dat gekoppeld kan worden aan 4 verschillende 
 * De Boodschappenlijst.
 * De Gebruikerspagina.
 
+___
+___
+
 ## Main Frame
 
 Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten.
@@ -19,6 +22,8 @@ Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het L
 De Agenda en de Login zijn gesitueerd aan de linkerzijde. Hierin kan men inloggen als de gebruiker in de database kan worden gevonden. Anders wordt er een nieuwe gebruiker gecreëerd en dan toegevoegd aan de database, mits de email of gebruikersnaam al niet bestaat. Hierna wordt de gebruiker doorgestuurd naar de Gebruikerspagina.
 
 Onderaan vindt men de contactinformatie van de site.
+
+___
 
 ## Homepage
 
@@ -37,6 +42,8 @@ Op de homepage zijn alle recepten te zien samen met wat informatie, bestaande ui
 * Een korte omschrijving.
 
 Ook is er onderaan een knop die de gebruiker doorstuurt naar de Detailpagina van het desbetreffende recept.
+
+___
 
 ## Detailpagina
 
@@ -72,9 +79,17 @@ In de tab Bereidingswijze staat het stappenplan voor het maken van het recept.
 
 In de tab Opmerkingen vindt men beoordelingen van bepaalde gebruikers over het recept.
 
+___
+
 ## Boodschappenlijst
 
-Op de boodschappenlijst staan alle ingrediënten van die recepten waarvan de gebruiker op de knop Op Lijst heeft geklikt op de Detailpagina.
+Op de boodschappenlijst staan alle ingrediënten van die recepten waarvan de gebruiker op de knop Op Lijst heeft geklikt op de Detailpagina. Tevens worden deze ingrediënten dan toegevoegd aan de database. Naast de ingrediëntinformatie staat op de lijst:
+
+* Het aantal eenheden nodig van hetzelfde ingrediënt
+* De totale prijs van alle eenheden van het betreffende ingrediënt.
+* De optie om het ingrediënt van het lijstje te gooien.
+
+Tevens staat onderaan de totale prijs van alle ingrediënten.
 
 
 <!-- Italics -->
