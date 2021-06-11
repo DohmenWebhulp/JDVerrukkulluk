@@ -25,21 +25,6 @@
                     </div>
                     <div style="clear: both"></div>
                     <div class="flotl"><h5>Heerlijke {{record.Naam}}!</h5></div>
-                    <script>
-
-                        $(document).ready(function(){
-                            var gemw = {{record.Gemiddelde_Waardering}};
-                            $('.fa-star').each((index, elem) =>{
-                                var itemValue = $(elem).attr('data-value');
-                                $(elem).removeClass("red");
-                                if(Math.ceil(gemw) >= itemValue){
-                                    $(elem).addClass("red");
-                                }
-                            })
-                            console.log(gemw);
-                        })
-
-                    </script>
                     <div class="flotr">
                         <span class="fa fa-star" id="{{record.id}}_star1" data-value="1"></span>
                         <span class="fa fa-star" id="{{record.id}}_star2" data-value="2"></span>
@@ -57,7 +42,6 @@
                     </a>
                     
                     <!--ajax call met JavaScript-->
-
 
                 </div>
             </div>
