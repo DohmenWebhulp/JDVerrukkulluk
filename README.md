@@ -28,7 +28,7 @@ ___
 * JQuery
 * JavaScript
 
-Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vormgegeven. Bootstrap zorgt tevens voor de Carousel en tab toggle voor de ingrediënten, bereidingswijze en opmerkingen. Jquery maakt de dynamiek van de site makkelijker. Hierin zijn ook de ajax calls opgenomen voor de waardering en favorieten. FontAwesome levert herkenbare icoontjes om te gebruiken. In PHP zijn sql queries geschreven om gegevens op te vragen uit de database.
+Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vormgegeven. Bootstrap zorgt tevens voor de Carousel en tab toggle voor de ingrediënten, bereidingswijze en opmerkingen. Jquery maakt de dynamiek van de site makkelijker. Hierin zijn ook de ajax calls opgenomen voor de waardering en favorieten. FontAwesome levert herkenbare icoontjes om te gebruiken. In PHP zijn SQL queries geschreven om gegevens op te vragen uit de database.
 
 ## Methoden en Technieken
 
