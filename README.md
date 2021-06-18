@@ -20,6 +20,17 @@ De site bestaat uit het main frame dat gekoppeld kan worden aan 4 verschillende 
 ___
 ___
 
+## Technologieën
+
+* MySQL Database
+* PHP
+* HTML
+* CSS
+* Bootstrap
+* FontAwesome
+* JQuery
+* JavaScript
+
 ## Main Frame
 
 Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten. Ook is er rechtsboven een zoekfunctie, die zoekt op trefwoorden (substrings) aanwezig in de informatie over een bepaald recept. Een druk op enter laat alle recepten zien die de opgegeven substring hebben.
@@ -53,6 +64,7 @@ ___
 ## Detailpagina
 
 ![detailpage](screenshots/detail.PNG)
+![detailpage](screenshots/ingredss.PNG)
 
 Op de Detailpagina staan naast de informatie op de homepage nog meer details over het recept, waaronder
 
@@ -89,6 +101,8 @@ In de tab Opmerkingen vindt men beoordelingen van bepaalde gebruikers over het r
 ___
 
 ## Boodschappenlijst
+
+![boodschappen](screenshots/boodscreenshot.PNG)
 
 Op de boodschappenlijst staan alle ingrediënten van die recepten waarvan de gebruiker op de knop Op Lijst heeft geklikt op de Detailpagina. Tevens worden deze ingrediënten dan toegevoegd aan de database. Naast de ingrediëntinformatie staat op de lijst:
 
