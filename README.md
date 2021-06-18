@@ -56,11 +56,12 @@ De Agenda en de Login zijn gesitueerd aan de linkerzijde. Hierin kan men inlogge
 
 Onderaan vindt men de contactinformatie van de site.
 
-![homepage](screenshots/carousel.PNG)
-![homepage](screenshots/recepten.PNG)
 ___
 
 ## Homepage
+
+![homepage](screenshots/carousel.PNG)
+![homepage](screenshots/recepten.PNG)
 
 Op de homepage zijn alle recepten te zien samen met wat informatie, bestaande uit:
 
