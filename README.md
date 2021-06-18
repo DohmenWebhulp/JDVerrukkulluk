@@ -31,6 +31,12 @@ ___
 * JQuery
 * JavaScript
 
+Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vormgegeven. Bootstrap zorgt tevens voor de Carousel en tab toggle voor de ingrediënten, bereidingswijze en opmerkingen. Jquery maakt de dynamiek van de site makkelijker. Hierin zijn ook de ajax calls opgenomen voor de waardering en favorieten. FontAwesome levert herkenbare icoontjes om te gebruiken.
+
+## Methoden en Technieken
+
+![methoden](screenshots/verruk_ERD.png)
+![methoden](screenshots/verruk_ASD.png)
 ## Main Frame
 
 Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten. Ook is er rechtsboven een zoekfunctie, die zoekt op trefwoorden (substrings) aanwezig in de informatie over een bepaald recept. Een druk op enter laat alle recepten zien die de opgegeven substring hebben.
