@@ -36,7 +36,10 @@ Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vo
 ## Methoden en Technieken
 
 ![methoden](screenshots/verruk_ERD.png)
-![methoden](screenshots/verruk_ASD.png)
+![methoden](screenshots/verruk_ASD_recept.png)
+![methoden](screenshots/verruk_ASD_gerecht_info.png)
+![methoden](screenshots/verruk_ASD_entities.png)
+
 ## Main Frame
 
 Aan het main frame zijn alle pagina's verbonden. Bovenaan het frame kunt U het Logo en de Carousel zien, met de Carousel scrollend door alle recepten. Ook is er rechtsboven een zoekfunctie, die zoekt op trefwoorden (substrings) aanwezig in de informatie over een bepaald recept. Een druk op enter laat alle recepten zien die de opgegeven substring hebben.
