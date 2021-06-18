@@ -5,9 +5,6 @@
 
 Dit is de website gemaakt door mij voor het project Verrukkulluk. In dit project heb ik een website gemaakt die verschillende recepten toont met bijbehorende informatie. De eerste weken was ik bezig met ERD's en ASD's te maken om de data structuur inzichtelijk te maken. Tevens ging ik aan de slag met php en een databse voor de backend kant van de website. De laatste twee weken gingen vooral over het inrichten van de website (frontend) en de verbinding leggen met de backend via onder andere forms en ajax calls. Dat laatste is een aardige manier om meteen gegevens in de database te kunnen opslaan zonder de pagina te hoeven herladen.
 
-![homepage](screenshots/carousel.PNG)
-![homepage](screenshots/recepten.PNG)
-
 ## Structuur 
 
 De site bestaat uit het main frame dat gekoppeld kan worden aan 4 verschillende pagina's, te weten:
@@ -31,13 +28,24 @@ ___
 * JQuery
 * JavaScript
 
-Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vormgegeven. Bootstrap zorgt tevens voor de Carousel en tab toggle voor de ingrediënten, bereidingswijze en opmerkingen. Jquery maakt de dynamiek van de site makkelijker. Hierin zijn ook de ajax calls opgenomen voor de waardering en favorieten. FontAwesome levert herkenbare icoontjes om te gebruiken.
+Met HTML en CSS, gebruik makend van de bootstrap package, heb ik de webpagina vormgegeven. Bootstrap zorgt tevens voor de Carousel en tab toggle voor de ingrediënten, bereidingswijze en opmerkingen. Jquery maakt de dynamiek van de site makkelijker. Hierin zijn ook de ajax calls opgenomen voor de waardering en favorieten. FontAwesome levert herkenbare icoontjes om te gebruiken. In PHP zijn sql queries geschreven om gegevens op te vragen uit de database.
 
 ## Methoden en Technieken
 
+Het ERD, met alle PK's en FK's, van deze case ziet er als volgt uit:
+
 ![methoden](screenshots/verruk_ERD.png)
+
+In de ASD's staat het ophalen van het recept centraal:
+
 ![methoden](screenshots/verruk_ASD_recept.png)
+
+Ook zijn er additionele functies verbonden aan de gerecht-info entiteiten:
+
 ![methoden](screenshots/verruk_ASD_gerecht_info.png)
+
+De andere entiteiten zijn voor het grootste gedeelte recht toe recht aan, met uitzondering van de Ingrediënten, die een FK relatie heeft naar de Artikel entiteit.
+
 ![methoden](screenshots/verruk_ASD_entities.png)
 
 ## Main Frame
@@ -48,13 +56,11 @@ De Agenda en de Login zijn gesitueerd aan de linkerzijde. Hierin kan men inlogge
 
 Onderaan vindt men de contactinformatie van de site.
 
+![homepage](screenshots/carousel.PNG)
+![homepage](screenshots/recepten.PNG)
 ___
 
 ## Homepage
-
-De homepage ziet er als volgt uit:
-
-![homepage](screenshots/hamburger.jpg)
 
 Op de homepage zijn alle recepten te zien samen met wat informatie, bestaande uit:
 
