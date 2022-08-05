@@ -3,7 +3,7 @@
 <!-- Headings -->
 # De Verrukkulluk website
 
-Dit is de website gemaakt door mij voor het project Verrukkulluk. In dit project heb ik een website gemaakt die verschillende recepten toont met bijbehorende informatie. De eerste weken was ik bezig met ERD's en ASD's te maken om de data structuur inzichtelijk te maken. Tevens ging ik aan de slag met php en een databse voor de backend kant van de website. De laatste twee weken gingen vooral over het inrichten van de website (frontend) en de verbinding leggen met de backend via onder andere forms en ajax calls. Dat laatste is een aardige manier om meteen gegevens in de database te kunnen opslaan zonder de pagina te hoeven herladen.
+Dit is de website gemaakt door mij voor het project Verrukkulluk. In dit project heb ik een website gemaakt die verschillende recepten toont met bijbehorende informatie. De eerste weken was ik bezig met ERD's en ASD's te maken om de data structuur inzichtelijk te maken. Tevens ging ik aan de slag met php en een database in MySql voor de backend kant van de website. De laatste twee weken gingen vooral over het inrichten van de website (frontend) en de verbinding leggen met de backend via onder andere forms en ajax calls. Dat laatste is een aardige manier om meteen gegevens in de database te kunnen opslaan zonder de pagina te hoeven herladen.
 
 ## Structuur 
 
